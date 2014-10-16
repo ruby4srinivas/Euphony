@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<%= @genre_type.genre_type_name %>
+<%= @genre_type.genre_language.genre_language_name %><br>
+
+</div>
+
+<%= link_to 'Edit', edit_genre_type_path(@genre_type) %> |
+<%= link_to 'Back', genre_types_path %>
+<%= link_to 'New', new_genre_type_path %>
+<%= link_to 'All', genre_types_path %>

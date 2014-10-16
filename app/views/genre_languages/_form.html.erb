@@ -1,0 +1,11 @@
+<%= simple_form_for(@genre_language) do |f| %>
+    <% if @genre_language.errors.any? %>
+        <%= render 'shared/error_message' ,target: @genre_language%>
+    <% end %>
+
+  <div class="form-actions">
+    <%= f.input :genre_language_name,  label: "Language Name" ,autofocus: true,  placeholder: "Add Language" %>
+    <%= f.button :submit ,class: "btn btn-primary"%>
+    <%= f.submit  'Create & Add New', class: "btn btn-primary"    %>
+  </div>
+<% end %>

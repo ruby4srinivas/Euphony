@@ -1,0 +1,25 @@
+<h1>Listing genre_types</h1>
+
+<table cellspacing="10">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genre_types.each do |genre_type| %>
+      <tr>
+        <td><%= genre_type.genre_type_name %></td>
+        <td><%= genre_type.genre_language.genre_language_name %></td>
+        <td><%= link_to 'Show', genre_type %></td>
+        <td><%= link_to 'Edit', edit_genre_type_path(genre_type) %></td>
+        <td><%= link_to 'Destroy', genre_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genre type', new_genre_type_path %>

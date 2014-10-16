@@ -1,0 +1,2 @@
+module GenreTypesHelper
+end

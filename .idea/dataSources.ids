@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails euphony: development" uuid="38ec5d10-1302-4689-bb8c-5afe52480f95">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails euphony: test" uuid="50ddc26b-3f8c-4c63-9eac-bfc7cfe7647a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails euphony: production" uuid="d8fef0f7-28b2-4bf9-b401-f5232718ebff">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

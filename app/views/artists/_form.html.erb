@@ -1,0 +1,28 @@
+<%= simple_form_for @artist, html: {multipart: true} do |f| %>
+  <%#= f.error_notification %>
+
+        <%= render 'shared/error_message' ,target: @artist%>
+
+
+  <div class="form-actions">
+    <%= f.input :artist_name %>
+    <%#= f.input :category_id, collection: @categories,label_method: :category_name,label_id: :category_id ,prompt: "Category" %>
+    <%= f.association :category,label_method: :category_name, value_method: :id, prompt: "Choose Category", label: "year" %>
+    <%= f.input :image, as: :attachment_preview %>
+    <%= f.submit class: "btn btn-primary"%>
+    <%= f.submit 'Create & Add New' , class: "btn btn-success"%>
+
+  </div>
+<% end %>
+<!--<script>
+//  $(document).ready(function(){
+//
+////      $( "#artist_category_id" ).change(function() {
+////          alert($("#artist_category_id option:selected").text());
+////      });
+//
+//
+//
+//
+//  });
+</script>-->

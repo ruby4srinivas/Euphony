@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+<%= @artist.artist_name %><br>
+<%= @artist.category.category_name %><br>
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %> <br>
+
+<%= image_tag @artist.image_url, size: "400x400" %>
