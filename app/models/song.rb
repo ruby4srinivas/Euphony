@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   belongs_to :album
-  has_many :artists_songs
-  has_many :artists, throug: :artists_songs
+  has_many :artist_songs
+  has_many :artists, throug: :artist_songs
   validates :song_name , presence: true,length: {maximum: 100}
 
 # category id must have value

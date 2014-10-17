@@ -1,4 +1,4 @@
-<%= simple_form_for Album.new  do |f| %>
+<%= simple_nested_form_for Album.new  do |f| %>
     <%= render 'shared/error_message' ,target: @album%>
 
   <div class="form-actions">
@@ -16,9 +16,31 @@
 <!-- ,{:include_blank => true} -->
     <div class="field"><%= f.input :image, as: :attachment_preview %></div>
 
-    <%#= f.simple_fields_for :artists do |artist|%>
-             <%#= f.input :artist_name %>
-    <%# end  %>
+
+
+
+
+
+    <div class="field">
+      <label> Actor </label>
+
+      <%= f.simple_fields_for :artists do |artist|%>
+
+
+
+          <%#= f.collection_select :id,Artist.order(:artist_name),:id, :artist_name,{:include_blank => "Select Artist"},:label =>"Actor",id:'add_artist' %>
+          <%#= f.association :artists, label_method: :id, value_method: :artist_name %>
+        <% end  %>
+      <%= f.link_to_add "Add a Artist", :artists,:class=>'btn btn-primary', :id=>"add_artist" %>
+    </div>
+
+
+
+
+
+
+
+
     <%= f.button :submit, class: "btn btn-primary"%>
     <%= f.submit 'Create & Add New' , class: "btn btn-success"%>
   </div>

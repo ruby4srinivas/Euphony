@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016090446) do
+ActiveRecord::Schema.define(version: 20141017171004) do
+
+  create_table "album_artists", force: true do |t|
+    t.integer  "artist_id"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "albums", force: true do |t|
     t.string   "album_name",    limit: 100, null: false
@@ -24,9 +31,11 @@ ActiveRecord::Schema.define(version: 20141016090446) do
 
   add_index "albums", ["album_name"], name: "index_albums_on_album_name", using: :btree
 
-  create_table "albums_artists", force: true do |t|
-    t.integer "artist_id"
-    t.integer "album_id"
+  create_table "artist_songs", force: true do |t|
+    t.integer  "artist_id"
+    t.integer  "song_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "artists", force: true do |t|
@@ -38,11 +47,6 @@ ActiveRecord::Schema.define(version: 20141016090446) do
   end
 
   add_index "artists", ["artist_name"], name: "index_artists_on_artist_name", unique: true, using: :btree
-
-  create_table "artists_songs", force: true do |t|
-    t.integer "artist_id"
-    t.integer "song_id"
-  end
 
   create_table "categories", force: true do |t|
     t.string   "category_name", limit: 40, null: false
