@@ -7,5 +7,7 @@ class CreateArtists < ActiveRecord::Migration
 
       t.timestamps
     end
+    #rename_column :artists, :id, :artist_id
+    add_index :artists, :artist_name, :unique => true
   end
 end

@@ -7,5 +7,7 @@ class CreateGenreTypes < ActiveRecord::Migration
       t.timestamps
     end
     add_index :genre_types, :genre_type_name
+    #rename_column :genre_types, :id, :genre_type_id
+
   end
 end

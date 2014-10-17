@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20141016090446) do
     t.datetime "updated_at"
   end
 
+  add_index "albums", ["album_name"], name: "index_albums_on_album_name", using: :btree
+
   create_table "albums_artists", force: true do |t|
     t.integer "artist_id"
     t.integer "album_id"
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 20141016090446) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "artists", ["artist_name"], name: "index_artists_on_artist_name", unique: true, using: :btree
 
   create_table "artists_songs", force: true do |t|
     t.integer "artist_id"
@@ -65,7 +69,7 @@ ActiveRecord::Schema.define(version: 20141016090446) do
 
   add_index "genre_types", ["genre_type_name"], name: "index_genre_types_on_genre_type_name", using: :btree
 
-  create_table "songs", force: true do |t|
+  create_table "songs", primary_key: "song_id", force: true do |t|
     t.string   "song_name",  limit: 100, null: false
     t.string   "track",                  null: false
     t.integer  "album_id"
